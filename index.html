@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0}[hidden]{display:none!important}</style>
-<title>Bucătărie gola v19</title>
+<title>Bucătărie gola v20</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@ button{font-family:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 <div id="stage"><canvas id="c" aria-label="Randare 3D interactivă a bucătăriei"></canvas></div>
-<header class="brand"><span class="mark"></span><div><h1>Bucătărie gola</h1><p>v19 · colț 5 × 5 m · profile aurii · + instalația centralei</p></div></header>
+<header class="brand"><span class="mark"></span><div><h1>Bucătărie gola</h1><p>v20 · colț 5 × 5 m · profile aurii · + instalația centralei</p></div></header>
 <div id="hint" class="hint"></div>
 <div id="load">Se încarcă scena 3D…</div>
 <aside class="panel" id="panel">
@@ -481,10 +481,12 @@ cyl(ovenG, 559, 1067, 3095, 'x', 15, 12, M.chrome); cyl(ovenG, 559, 1067, 3605, 
 }
 ovenG.position.x = 18; ovenG.position.y = -8;
 
-// cuptor cu microunde (orientativ)
-box(baseG, 190, 530, 3125, 3575, 1118, 1378, M.dark); box(baseG, 530, 533, 3135, 3470, 1124, 1372, std(0x787a80, 0.5, 0.4));
-box(baseG, 533, 534, 3160, 3440, 1150, 1345, M.black, { cast: false }); box(baseG, 530, 533, 3480, 3565, 1124, 1372, std(0x55565c, 0.5, 0.4));
-cyl(baseG, 533, 1250, 3522, 'x', 22, 10, M.chrome); cyl(baseG, 540, 1160, 3475, 'y', 6, 180, M.chrome);
+// cuptor cu microunde (orientativ); v20: stă pe raftul coborât cu 8 mm
+const mwG = new THREE.Group(); baseG.add(mwG);
+box(mwG, 190, 530, 3125, 3575, 1118, 1378, M.dark); box(mwG, 530, 533, 3135, 3470, 1124, 1372, std(0x787a80, 0.5, 0.4));
+box(mwG, 533, 534, 3160, 3440, 1150, 1345, M.black, { cast: false }); box(mwG, 530, 533, 3480, 3565, 1124, 1372, std(0x55565c, 0.5, 0.4));
+cyl(mwG, 533, 1250, 3522, 'x', 22, 10, M.chrome); cyl(mwG, 540, 1160, 3475, 'y', 6, 180, M.chrome);
+mwG.position.y = -8;
 
 // plită cu gaz pe sticlă Whirlpool GOA 6425 NB1 — redesenată
 {
@@ -917,6 +919,7 @@ function goView(k) {
 document.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => {
   goView(b.dataset.view);
   if (b.dataset.view === 'centrala') { $('tGhost').checked = true; setGhost(true); $('tInstLab').checked = true; INST.G.lab.visible = true; }
+  else { $('tGhost').checked = false; setGhost(false); $('tInstLab').checked = false; INST.G.lab.visible = false; }
 }));
 $('fold').addEventListener('click', () => {
   const c = $('panel').classList.toggle('closed'); $('fold').setAttribute('aria-expanded', c ? 'false' : 'true');
