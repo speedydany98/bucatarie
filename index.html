@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0}[hidden]{display:none!important}</style>
-<title>Bucătărie gola v20</title>
+<title>Bucătărie gola v26</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@ button{font-family:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 <div id="stage"><canvas id="c" aria-label="Randare 3D interactivă a bucătăriei"></canvas></div>
-<header class="brand"><span class="mark"></span><div><h1>Bucătărie gola</h1><p>v20 · colț 5 × 5 m · profile aurii · + instalația centralei</p></div></header>
+<header class="brand"><span class="mark"></span><div><h1>Bucătărie gola</h1><p>v26 · colț 5 × 5 m · profile aurii · + instalația centralei</p></div></header>
 <div id="hint" class="hint"></div>
 <div id="load">Se încarcă scena 3D…</div>
 <aside class="panel" id="panel">
@@ -59,12 +59,12 @@ button{font-family:inherit}
   <section><h2>Pagini</h2><div class="row"><a class="btn" href="instalatiecentrala.html" style="text-decoration:none">Detalii instalația centralei →</a></div></section>
   <section><h2>Vedere</h2><div class="row">
    <button class="btn" data-view="colt" aria-pressed="true">Colț</button><button class="btn" data-view="chiuveta" aria-pressed="false">Perete chiuvetă</button>
-   <button class="btn" data-view="turnuri" aria-pressed="false">Turnuri</button><button class="btn" data-view="sus" aria-pressed="false">De sus</button><button class="btn" data-view="centrala" aria-pressed="false">Instalația centralei</button></div></section>
+   <button class="btn" data-view="turnuri" aria-pressed="false">Turnuri</button><button class="btn" data-view="sus" aria-pressed="false">De sus</button><button class="btn" data-view="centrala" aria-pressed="false">Instalația centralei</button><button class="btn" data-view="tevi" aria-pressed="false">Țevi + calorifere</button></div></section>
   <section><h2>Culoare fronturi</h2><div class="row"><button class="chip" data-zone="all" aria-pressed="true"><span>Toate</span></button><button class="chip" data-zone="jos" aria-pressed="false"><span>Jos</span></button><button class="chip" data-zone="sus" aria-pressed="false"><span>Sus</span></button><button class="chip" data-zone="centrala" aria-pressed="false"><span>Centrală</span></button><button class="chip" data-zone="turn" aria-pressed="false"><span>Turnuri</span></button></div><div class="row"><button class="sw" data-col="alb" aria-label="Alb" title="Alb" aria-pressed="false" style="background:#eceae3"></button><button class="sw" data-col="crem" aria-label="Crem" title="Crem" aria-pressed="false" style="background:#e3d6bb"></button><button class="sw" data-col="taupe" aria-label="Taupe" title="Taupe" aria-pressed="false" style="background:#b8a797"></button><button class="sw" data-col="salvie" aria-label="Salvie" title="Salvie" aria-pressed="false" style="background:#a1ae9d"></button><button class="sw" data-col="albastru" aria-label="Albastru" title="Albastru" aria-pressed="false" style="background:#5f7a93"></button><button class="sw" data-col="terra" aria-label="Teracotă" title="Teracotă" aria-pressed="false" style="background:#b5694d"></button><button class="sw" data-col="antracit" aria-label="Antracit" title="Antracit" aria-pressed="false" style="background:#44474c"></button><button class="sw" data-col="stejar" aria-label="Stejar" title="Stejar" aria-pressed="false" style="background:#b88c57"></button></div><div class="row"><button class="chip" data-pre="p1"><span>Salvie + crem</span></button><button class="chip" data-pre="p2"><span>Antracit + stejar</span></button><button class="chip" data-pre="p3"><span>Taupe + alb</span></button><button class="chip" data-pre="p4"><span>Albastru + crem</span></button></div></section>
   <section><h2>Blat (decor Egger)</h2><div class="row"><button class="chip" data-blat="beton" aria-pressed="false"><span>Beton gri</span></button><button class="chip" data-blat="stejar" aria-pressed="false"><span>Stejar natur</span></button><button class="chip" data-blat="nebraska" aria-pressed="false"><span>Stejar Nebraska</span></button><button class="chip" data-blat="vintage" aria-pressed="false"><span>Lemn vintage</span></button><button class="chip" data-blat="marmura" aria-pressed="true"><span>Marmură neagră</span></button></div></section>
   <section><h2>Profil gola + plintă</h2><div class="row"><button class="chip" data-prof="alb" aria-pressed="false"><span>Alb</span></button><button class="chip" data-prof="negru" aria-pressed="false"><span>Negru</span></button><button class="chip" data-prof="gold" aria-pressed="true"><span>Gold</span></button><button class="chip" data-prof="gri" aria-pressed="false"><span>Gri</span></button></div></section>
   <section><h2>Antistropire</h2><div class="row"><button class="chip" data-spl="blat" aria-pressed="true"><span>Ca blatul</span></button><button class="chip" data-spl="tile" aria-pressed="false"><span>Gresie în culoarea fronturilor</span></button><button class="chip" data-spl="none" aria-pressed="false"><span>Fără</span></button></div></section>
-  <section class="tg"><label><input type="checkbox" id="tUpper" checked> Corpuri sus</label><label><input type="checkbox" id="tBlat" checked> Blat</label><label><input type="checkbox" id="tInst" checked> Instalația centralei</label><label><input type="checkbox" id="tInstLab"> Etichete instalație</label><label><input type="checkbox" id="tGhost"> Fronturi transparente (zona centralei)</label></section>
+  <section class="tg"><label><input type="checkbox" id="tUpper" checked> Corpuri sus</label><label><input type="checkbox" id="tBlat" checked> Blat</label><label><input type="checkbox" id="tInst" checked> Instalația centralei</label><label><input type="checkbox" id="tHeat" checked> Țevi PPR + calorifere</label><label><input type="checkbox" id="tWin"> Geamuri (orientativ)</label><label><input type="checkbox" id="tInstLab"> Etichete instalație</label><label><input type="checkbox" id="tGhost"> Fronturi transparente (zona centralei)</label></section>
  </div>
 </aside>
 <script>(function(){function show(m){var l=document.getElementById('load');if(l&&!window.__k3d)l.textContent=m}
@@ -80,7 +80,7 @@ const t="160",e={LEFT:0,MIDDLE:1,RIGHT:2,ROTATE:0,DOLLY:1,PAN:2},n={ROTATE:0,PAN
 </script>
 <script>
 const THREE = window.__THREE;
-const D = {"P":[[0,0,18,3,560,120,832,0],[0,0,18,3,536,832,882,0],[0,1132,1150,3,560,120,832,0],[0,1132,1150,3,536,832,882,0],[0,18,1132,3,560,120,138,0],[0,18,1132,518,536,782,882,0],[1,0,1150,0,3,120,882,0],[0,18,560,542,560,138,782,0],[0,18,580,37,540,473,491,0],[0,580,1131,37,557,473,491,0],[0,3,560,578,596,120,200,0],[0,3,536,578,596,832,882,0],[0,3,560,982,1000,120,832,0],[0,3,536,982,1000,832,882,0],[0,3,560,596,982,120,138,0],[0,518,536,596,982,782,882,0],[1,0,3,578,1000,120,882,0],[0,1150,1168,3,560,120,832,0],[0,1150,1168,3,536,832,882,0],[0,1732,1750,3,560,120,832,0],[0,1732,1750,3,536,832,882,0],[0,1168,1732,3,560,120,138,0],[1,1150,1750,0,3,120,882,0],[0,2350,2368,3,560,0,882,0],[0,1750,2350,436,536,864,882,0],[0,1750,2350,3,103,864,882,0],[0,3,560,1000,1018,120,832,0],[0,3,536,1000,1018,832,882,0],[0,3,560,1282,1300,120,832,0],[0,3,536,1282,1300,832,882,0],[0,3,560,1018,1282,120,138,0],[0,518,536,1018,1282,782,882,0],[1,0,3,1000,1300,120,882,0],[0,3,560,1300,1318,120,451,0],[0,3,533.5,1300,1318,451,524,0],[0,3,560,1300,1318,524,832,0],[0,3,536,1300,1318,832,882,0],[0,3,560,1882,1900,120,451,0],[0,3,533.5,1882,1900,451,524,0],[0,3,560,1882,1900,524,832,0],[0,3,536,1882,1900,832,882,0],[0,3,560,1318,1882,120,138,0],[0,518,536,1318,1882,822,862,0],[0,515.5,533.5,1318,1882,451,524,0],[1,0,3,1300,1900,120,882,0],[0,3,560,1900,1918,120,451,0],[0,3,533.5,1900,1918,451,524,0],[0,3,560,1900,1918,524,832,0],[0,3,536,1900,1918,832,882,0],[0,3,560,2457,2475,120,451,0],[0,3,533.5,2457,2475,451,524,0],[0,3,560,2457,2475,524,832,0],[0,3,536,2457,2475,832,882,0],[0,3,560,1918,2457,120,138,0],[0,518,536,1918,2457,782,882,0],[0,515.5,533.5,1918,2457,451,524,0],[1,0,3,1900,2475,120,882,0],[0,3,560,2475,2493,120,451,0],[0,3,533.5,2475,2493,451,524,0],[0,3,560,2475,2493,524,832,0],[0,3,536,2475,2493,832,882,0],[0,3,560,3032,3050,120,451,0],[0,3,533.5,3032,3050,451,524,0],[0,3,560,3032,3050,524,832,0],[0,3,536,3032,3050,832,882,0],[0,3,560,2493,3032,120,138,0],[0,518,536,2493,3032,782,882,0],[0,515.5,533.5,2493,3032,451,524,0],[1,0,3,2475,3050,120,882,0],[0,3,560,3050,3068,120,2290,0],[0,3,560,3632,3650,120,2290,0],[0,3,560,3068,3632,120,138,0],[0,3,560,3068,3632,2272,2290,0],[1,0,3,3050,3650,120,2290,0],[0,3,560,3068,3632,474,492,0],[0,3,560,3068,3632,1092,1110,0],[0,3,560,3068,3632,1535,1553,0],[0,3,560,3068,3632,2000,2018,0],[0,3,560,3650,4300,2050,2068,0],[0,3,560,3650,4300,2272,2290,0],[1,0,3,3650,4300,2050,2290,0],[0,3,560,4300,4318,120,2290,0],[0,3,560,4882,4900,120,2290,0],[0,3,560,4318,4882,120,138,0],[0,3,560,4318,4882,2272,2290,0],[1,0,3,4300,4900,120,2290,0],[0,3,560,4318,4882,1100,1118,0],[0,37,557,4319,4881,450,468,0],[0,37,557,4319,4881,800,818,0],[0,37,557,4319,4881,1450,1468,0],[0,37,557,4319,4881,1800,1818,0],[0,37,557,4319,4881,2100,2118,0],[0,450,468,3,450,1555,2290,1],[0,1132,1150,3,450,1575,2290,1],[0,468,1132,3,450,1575,1593,1],[0,468,1132,3,450,2272,2290,1],[1,450,1150,0,3,1575,2290,1],[0,469,1131,27,447,1932,1950,1],[0,1150,1168,3,450,1575,2290,1],[0,1732,1750,3,450,1575,2290,1],[0,1168,1732,3,450,2272,2290,1],[1,1150,1750,0,3,1575,2290,1],[0,1750,1768,3,450,1575,2290,1],[0,2350,2368,3,450,1575,2290,1],[0,1768,2350,3,450,1575,1593,1],[0,1768,2350,3,450,2272,2290,1],[1,1750,2368,0,3,1575,2290,1],[0,1769,2349,27,447,1932,1950,1],[0,3,450,1000,1018,1575,2290,1],[0,3,450,1282,1300,1575,2290,1],[0,3,450,1018,1282,1575,1593,1],[0,3,450,1018,1282,2272,2290,1],[1,0,3,1000,1300,1575,2290,1],[0,27,447,1019,1281,1932,1950,1],[0,3,450,1300,1318,1575,2290,1],[0,3,450,1882,1900,1575,2290,1],[0,3,450,1318,1882,1575,1593,1],[0,3,450,1318,1882,2272,2290,1],[1,0,3,1300,1900,1575,2290,1],[0,3,450,1900,1918,1575,2290,1],[0,3,450,2457,2475,1575,2290,1],[0,3,450,1918,2457,1575,1593,1],[0,3,450,1918,2457,2272,2290,1],[1,0,3,1900,2475,1575,2290,1],[0,27,447,1919,2456,1932,1950,1],[0,3,450,2475,2493,1575,2290,1],[0,3,450,3032,3050,1575,2290,1],[0,3,450,2493,3032,1575,1593,1],[0,3,450,2493,3032,2272,2290,1],[1,0,3,2475,3050,1575,2290,1],[0,27,447,2494,3031,1932,1950,1],[0,0,450,982,1000,920,2290,0],[0,0,450,0,18,920,1575,0],[0,432,450,18,982,2190,2272,0],[0,350,450,18,982,2272,2290,0]],"F":[{"t":"door","h":"x1","l":"Ușă colț mare (se deschide prima)","g":"jos","c":"c1","a":98,"b":[580,1148,560,578,121,850],"d":"568 × 729 × 18 mm","s":0},{"t":"door","h":"z1","l":"Ușă colț (a doua, după prima)","g":"jos","c":"c2","a":86,"b":[560,578,562,998,121,850],"d":"436 × 729 × 18 mm","s":0},{"t":"door","h":"x1","l":"Ușă chiuvetă","g":"jos","b":[1152,1748,560,578,121,850],"d":"596 × 729 × 18 mm","a":95,"s":0},{"t":"dish","l":"Front decor mașină de vase","g":"jos","b":[1752,2368,560,578,121,850],"d":"616 × 729 × 18 mm","a":95,"s":0},{"t":"jolly","l":"Coș Jolly","g":"jolly","b":[560,578,1002,1298,121,850],"d":"296 × 729 × 18 mm","a":95,"s":0},{"t":"drawer","yb":150,"yt":435,"l":"Sertar jos plită","g":"jos","b":[560,578,1302,1898,121,472],"d":"596 × 351 × 18 mm","a":95,"s":0},{"t":"drawer","yb":532,"yt":715,"inner":1,"iy":[722,812],"l":"Sertar sus plită","g":"jos","b":[560,578,1302,1898,502,850],"d":"596 × 348 × 18 mm","a":95,"s":0},{"t":"drawer","yb":150,"yt":290,"l":"Sertar jos 57,5 (a)","g":"jos","b":[560,578,1902,2473,121,472],"d":"571 × 351 × 18 mm","a":95,"s":0},{"t":"drawer","yb":532,"yt":700,"l":"Sertar sus 57,5 (a)","g":"jos","b":[560,578,1902,2473,502,850],"d":"571 × 348 × 18 mm","a":95,"s":0},{"t":"drawer","yb":150,"yt":290,"l":"Sertar jos 57,5 (b)","g":"jos","b":[560,578,2477,3048,121,472],"d":"571 × 351 × 18 mm","a":95,"s":0},{"t":"drawer","yb":532,"yt":700,"l":"Sertar sus 57,5 (b)","g":"jos","b":[560,578,2477,3048,502,850],"d":"571 × 348 × 18 mm","a":95,"s":0},{"t":"door","h":"z0","l":"Ușă sub cuptor","g":"turn","a":88,"b":[560,578,3052,3648,121,472],"d":"596 × 351 × 18 mm","s":0},{"t":"door","h":"z0","l":"Ușă sus turn cuptor","g":"turn","a":88,"b":[560,578,3052,3648,1557,2288],"d":"596 × 731 × 18 mm","s":0},{"t":"door","h":"z1","l":"Ușă deasupra frigider","g":"turn","a":95,"b":[560,578,3652,4298,2052,2288],"d":"646 × 236 × 18 mm","s":0},{"t":"door","h":"z1","l":"Ușă soldat jos","g":"turn","b":[560,578,4302,4898,122,1098],"d":"596 × 976 × 18 mm","a":95,"s":0},{"t":"door","h":"z1","l":"Ușă soldat sus","g":"turn","b":[560,578,4302,4898,1102,2288],"d":"596 × 1186 × 18 mm","a":95,"s":0},{"t":"door","h":"x1","a":110,"l":"Ușă sus stânga (se deschide prima)","g":"sus","s":1,"c":"u1","b":[472,1148,450,468,1557,2288],"d":"676 × 731 × 18 mm"},{"t":"door","h":"x1","l":"Ușă picurător","g":"sus","s":1,"b":[1152,1748,450,468,1557,2288],"d":"596 × 731 × 18 mm","a":95},{"t":"door","h":"x1","l":"Ușă sus mașină","g":"sus","s":1,"b":[1752,2368,450,468,1557,2288],"d":"616 × 731 × 18 mm","a":95},{"t":"door","h":"z0","l":"Ușă sus 30","g":"sus","s":1,"b":[450,468,1002,1298,1557,2288],"d":"296 × 731 × 18 mm","a":95},{"t":"door","h":"z0","l":"Ușă hotă","g":"sus","s":1,"a":95,"b":[450,468,1302,1898,1557,2288],"d":"596 × 731 × 18 mm"},{"t":"door","h":"z0","l":"Ușă sus 57,5 (a)","g":"sus","s":1,"b":[450,468,1902,2473,1557,2288],"d":"571 × 731 × 18 mm","a":95},{"t":"door","h":"z1","l":"Ușă sus 57,5 (b)","g":"sus","s":1,"b":[450,468,2477,3048,1557,2288],"d":"571 × 731 × 18 mm","a":95},{"t":"bifold","h":"z0","l":"Centrală — ușă jos (pliantă, 2 foi)","g":"centrala","b":[450,468,2,996,922,1552],"d":"994 × 630 × 18 mm (2 × 497)","a":95,"s":0},{"t":"door","h":"z1","l":"Centrală — ușă sus (a doua, după ușa S-T1)","g":"centrala","a":88,"c":"u2","b":[450,468,453,998,1557,2288],"d":"545 × 731 × 18 mm","s":0}],"W":[[0,1180,0,600,882,920],[1720,2380,0,600,882,920],[1180,1720,0,140,882,920],[1180,1720,530,600,882,920],[320,600,600,978,882,920],[0,600,978,3050,882,920]],"L":[[40,90],[40,470],[1110,90],[1110,470],[90,618],[470,618],[90,960],[470,960],[1190,90],[1190,470],[1710,90],[1710,470],[90,1040],[470,1040],[90,1260],[470,1260],[90,1340],[470,1340],[90,1860],[470,1860],[90,1940],[470,1940],[90,2435],[470,2435],[90,2515],[470,2515],[90,3010],[470,3010],[90,3090],[470,3090],[90,3610],[470,3610],[90,4340],[470,4340],[90,4860],[470,4860]]};
+const D = {"P":[[0,0,18,3,560,120,880,0],[0,1132,1150,3,560,120,822,0],[0,1132,1150,3,533,822,880,0],[0,18,1132,3,542,120,138,0],[0,18,1132,515,533,780,880,0],[1,0,1150,0,3,120,880,0],[0,18,560,542,560,120,822,0],[0,18,533,542,560,822,880,0],[0,18,580,37,540,473,491,0],[0,580,1131,37,557,473,491,0],[0,3,560,560,578,120,822,0],[0,3,533,560,578,822,880,0],[0,3,560,982,1000,120,822,0],[0,3,533,982,1000,822,880,0],[0,3,560,578,982,120,138,0],[0,515,533,578,982,780,880,0],[1,0,3,560,1000,120,880,0],[0,1150,1168,3,560,120,822,0],[0,1150,1168,3,533,822,880,0],[0,1732,1750,3,560,120,822,0],[0,1732,1750,3,533,822,880,0],[0,1168,1732,3,560,120,138,0],[1,1150,1750,0,3,120,880,0],[0,2350,2368,3,560,0,880,0],[0,1750,2350,433,533,862,880,0],[0,1750,2350,3,103,862,880,0],[0,3,560,1000,1018,120,822,0],[0,3,533,1000,1018,822,880,0],[0,3,560,1282,1300,120,822,0],[0,3,533,1282,1300,822,880,0],[0,3,560,1018,1282,120,138,0],[0,515,533,1018,1282,780,880,0],[1,0,3,1000,1300,120,880,0],[0,3,560,1300,1318,120,449,0],[0,3,533,1300,1318,449,521,0],[0,3,560,1300,1318,521,822,0],[0,3,533,1300,1318,822,880,0],[0,3,560,1882,1900,120,449,0],[0,3,533,1882,1900,449,521,0],[0,3,560,1882,1900,521,822,0],[0,3,533,1882,1900,822,880,0],[0,3,560,1318,1882,120,138,0],[0,515,533,1318,1882,820,860,0],[0,515,533,1318,1882,449,521,0],[1,0,3,1300,1900,120,880,0],[0,3,560,1900,1918,120,449,0],[0,3,533,1900,1918,449,521,0],[0,3,560,1900,1918,521,822,0],[0,3,533,1900,1918,822,880,0],[0,3,560,2457,2475,120,449,0],[0,3,533,2457,2475,449,521,0],[0,3,560,2457,2475,521,822,0],[0,3,533,2457,2475,822,880,0],[0,3,560,1918,2457,120,138,0],[0,515,533,1918,2457,780,880,0],[0,515,533,1918,2457,449,521,0],[1,0,3,1900,2475,120,880,0],[0,3,560,2475,2493,120,449,0],[0,3,533,2475,2493,449,521,0],[0,3,560,2475,2493,521,822,0],[0,3,533,2475,2493,822,880,0],[0,3,560,3032,3050,120,449,0],[0,3,533,3032,3050,449,521,0],[0,3,560,3032,3050,521,822,0],[0,3,533,3032,3050,822,880,0],[0,3,560,2493,3032,120,138,0],[0,515,533,2493,3032,780,880,0],[0,515,533,2493,3032,449,521,0],[1,0,3,2475,3050,120,880,0],[0,3,560,3050,3068,120,2290,0],[0,3,560,3632,3650,120,2290,0],[0,3,560,3068,3632,120,138,0],[0,3,560,3068,3632,2272,2290,0],[1,0,3,3050,3650,120,2290,0],[0,3,560,3068,3632,456,474,0],[0,3,560,3068,3632,1074,1092,0],[0,3,560,3068,3632,1535,1553,0],[0,3,560,3068,3632,2000,2018,0],[0,3,560,3650,4300,2050,2068,0],[0,3,560,3650,4300,2272,2290,0],[1,0,3,3650,4300,2050,2290,0],[0,3,560,4300,4318,120,2290,0],[0,3,560,4882,4900,120,2290,0],[0,3,560,4318,4882,120,138,0],[0,3,560,4318,4882,2272,2290,0],[1,0,3,4300,4900,120,2290,0],[0,3,560,4318,4882,1100,1118,0],[0,37,557,4319,4881,450,468,0],[0,37,557,4319,4881,800,818,0],[0,37,557,4319,4881,1450,1468,0],[0,37,557,4319,4881,1800,1818,0],[0,37,557,4319,4881,2100,2118,0],[0,450,468,3,450,1555,2290,1],[0,1132,1150,3,450,1575,2290,1],[0,468,1132,3,450,1575,1593,1],[0,468,1132,3,450,2272,2290,1],[1,450,1150,0,3,1575,2290,1],[0,469,1131,27,447,1932,1950,1],[0,1150,1168,3,450,1575,2290,1],[0,1732,1750,3,450,1575,2290,1],[0,1168,1732,3,450,2272,2290,1],[1,1150,1750,0,3,1575,2290,1],[0,1750,1768,3,450,1575,2290,1],[0,2350,2368,3,450,1575,2290,1],[0,1768,2350,3,450,1575,1593,1],[0,1768,2350,3,450,2272,2290,1],[1,1750,2368,0,3,1575,2290,1],[0,1769,2349,27,447,1932,1950,1],[0,3,450,1000,1018,1575,2290,1],[0,3,450,1282,1300,1575,2290,1],[0,3,450,1018,1282,1575,1593,1],[0,3,450,1018,1282,2272,2290,1],[1,0,3,1000,1300,1575,2290,1],[0,27,447,1019,1281,1932,1950,1],[0,3,450,1300,1318,1575,2290,1],[0,3,450,1882,1900,1575,2290,1],[0,3,450,1318,1882,1575,1593,1],[0,3,450,1318,1882,2272,2290,1],[1,0,3,1300,1900,1575,2290,1],[0,3,450,1900,1918,1575,2290,1],[0,3,450,2457,2475,1575,2290,1],[0,3,450,1918,2457,1575,1593,1],[0,3,450,1918,2457,2272,2290,1],[1,0,3,1900,2475,1575,2290,1],[0,27,447,1919,2456,1932,1950,1],[0,3,450,2475,2493,1575,2290,1],[0,3,450,3032,3050,1575,2290,1],[0,3,450,2493,3032,1575,1593,1],[0,3,450,2493,3032,2272,2290,1],[1,0,3,2475,3050,1575,2290,1],[0,27,447,2494,3031,1932,1950,1],[0,0,450,982,1000,918,2290,0],[0,0,450,0,18,918,2290,0],[0,350,450,18,982,2272,2290,0],[0,432,450,18,982,2190,2272,0],[0,0,100,18,982,2272,2290,0],[0,0,18,18,982,2190,2272,0],[0,432,450,18,982,2190,2272,0],[0,350,450,18,982,2272,2290,0]],"F":[{"t":"door","h":"x1","l":"U\u0219\u0103 col\u021b mare (se deschide prima)","g":"jos","c":"c1","a":98,"b":[580,1148,560,578,120,850],"d":"568 \u00d7 730 \u00d7 18 mm","s":0},{"t":"door","h":"z1","l":"U\u0219\u0103 col\u021b (a doua, dup\u0103 prima)","g":"jos","c":"c2","a":86,"b":[560,578,562,998,120,850],"d":"436 \u00d7 730 \u00d7 18 mm","s":0},{"t":"door","h":"x1","l":"U\u0219\u0103 chiuvet\u0103","g":"jos","b":[1152,1748,560,578,120,850],"d":"596 \u00d7 730 \u00d7 18 mm","a":95,"s":0},{"t":"dish","l":"Front decor ma\u0219in\u0103 de vase","g":"jos","b":[1752,2368,560,578,120,850],"d":"616 \u00d7 730 \u00d7 18 mm","a":95,"s":0},{"t":"jolly","l":"Co\u0219 Jolly","g":"jolly","b":[560,578,1002,1298,120,850],"d":"296 \u00d7 730 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":153,"yt":353,"l":"Sertar jos plit\u0103","g":"jos","b":[560,578,1302,1898,120,470],"d":"596 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":533,"yt":701,"inner":1,"iy":[725,793],"l":"Sertar sus plit\u0103","g":"jos","b":[560,578,1302,1898,500,850],"d":"596 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":153,"yt":353,"l":"Sertar jos 57,5 (a)","g":"jos","b":[560,578,1902,2473,120,470],"d":"571 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":533,"yt":733,"l":"Sertar sus 57,5 (a)","g":"jos","b":[560,578,1902,2473,500,850],"d":"571 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":153,"yt":353,"l":"Sertar jos 57,5 (b)","g":"jos","b":[560,578,2477,3048,120,470],"d":"571 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"drawer","yb":533,"yt":733,"l":"Sertar sus 57,5 (b)","g":"jos","b":[560,578,2477,3048,500,850],"d":"571 \u00d7 350 \u00d7 18 mm","a":95,"s":0},{"t":"door","h":"z0","l":"U\u0219\u0103 sub cuptor","g":"turn","a":88,"b":[560,578,3052,3648,120,470],"d":"596 \u00d7 350 \u00d7 18 mm","s":0},{"t":"door","h":"z0","l":"U\u0219\u0103 sus turn cuptor","g":"turn","a":88,"b":[560,578,3052,3648,1539,2288],"d":"596 \u00d7 749 \u00d7 18 mm","s":0},{"t":"door","h":"z1","l":"U\u0219\u0103 deasupra frigider","g":"turn","a":95,"b":[560,578,3652,4298,2052,2288],"d":"646 \u00d7 236 \u00d7 18 mm","s":0},{"t":"door","h":"z1","l":"U\u0219\u0103 soldat jos","g":"turn","b":[560,578,4302,4898,122,1098],"d":"596 \u00d7 976 \u00d7 18 mm","a":95,"s":0},{"t":"door","h":"z1","l":"U\u0219\u0103 soldat sus","g":"turn","b":[560,578,4302,4898,1102,2288],"d":"596 \u00d7 1186 \u00d7 18 mm","a":95,"s":0},{"t":"door","h":"x1","a":110,"l":"U\u0219\u0103 sus st\u00e2nga (se deschide prima)","g":"sus","s":1,"c":"u1","b":[472,1148,450,468,1557,2288],"d":"676 \u00d7 731 \u00d7 18 mm"},{"t":"door","h":"x1","l":"U\u0219\u0103 picur\u0103tor","g":"sus","s":1,"b":[1152,1748,450,468,1557,2288],"d":"596 \u00d7 731 \u00d7 18 mm","a":95},{"t":"door","h":"x1","l":"U\u0219\u0103 sus ma\u0219in\u0103","g":"sus","s":1,"b":[1752,2368,450,468,1557,2288],"d":"616 \u00d7 731 \u00d7 18 mm","a":95},{"t":"door","h":"z0","l":"U\u0219\u0103 sus 30","g":"sus","s":1,"b":[450,468,1002,1298,1557,2288],"d":"296 \u00d7 731 \u00d7 18 mm","a":95},{"t":"door","h":"z0","l":"U\u0219\u0103 hot\u0103","g":"sus","s":1,"a":95,"b":[450,468,1302,1898,1557,2288],"d":"596 \u00d7 731 \u00d7 18 mm"},{"t":"door","h":"z0","l":"U\u0219\u0103 sus 57,5 (a)","g":"sus","s":1,"b":[450,468,1902,2473,1557,2288],"d":"571 \u00d7 731 \u00d7 18 mm","a":95},{"t":"door","h":"z1","l":"U\u0219\u0103 sus 57,5 (b)","g":"sus","s":1,"b":[450,468,2477,3048,1557,2288],"d":"571 \u00d7 731 \u00d7 18 mm","a":95},{"t":"door","h":"z0","l":"Central\u0103 \u2014 u\u0219\u0103 jos st\u00e2nga (balamale perete nord)","g":"centrala","a":110,"b":[450,468,2,498,922,1552],"d":"496 \u00d7 630 \u00d7 18 mm","s":0},{"t":"door","h":"z1","l":"Central\u0103 \u2014 u\u0219\u0103 jos dreapta (balamale panou sud)","g":"centrala","a":110,"b":[450,468,500,996,922,1552],"d":"496 \u00d7 630 \u00d7 18 mm","s":0},{"t":"door","h":"z1","l":"Central\u0103 \u2014 u\u0219\u0103 sus (a doua, dup\u0103 u\u0219a S-T1)","g":"centrala","a":88,"c":"u2","b":[450,468,453,998,1557,2288],"d":"545 \u00d7 731 \u00d7 18 mm","s":0}],"W":[[0,1180,0,600,882,920],[1720,2380,0,600,882,920],[1180,1720,0,140,882,920],[1180,1720,530,600,882,920],[0,600,600,3050,880,918]],"L":[[40,90],[40,470],[1110,90],[1110,470],[70,600],[470,600],[70,960],[470,960],[1190,90],[1190,470],[1710,90],[1710,470],[70,1040],[470,1040],[70,1260],[470,1260],[70,1340],[470,1340],[70,1860],[470,1860],[70,1940],[470,1940],[70,2435],[470,2435],[70,2515],[470,2515],[70,3010],[470,3010],[70,3090],[470,3090],[70,3610],[470,3610],[70,4340],[470,4340],[70,4860],[470,4860]]};
 const $ = (id) => document.getElementById(id);
 const rad = (d) => d * Math.PI / 180;
 const canvas = $('c'), stage = $('stage');
@@ -221,12 +221,13 @@ placeCam();
   const w2 = new THREE.Mesh(new THREE.PlaneGeometry(5, 2.3), M.wall); w2.rotation.y = Math.PI / 2; w2.position.set(0, 1.15, 2.5); w2.receiveShadow = true; scene.add(w2);
   // perete vest (z = 5 m), orientativ; vizibil doar dinspre interior
   const w3 = new THREE.Mesh(new THREE.PlaneGeometry(5, 2.3), M.wall); w3.rotation.y = Math.PI; w3.position.set(2.5, 1.15, 5); w3.receiveShadow = true; scene.add(w3);
+  const w4 = new THREE.Mesh(new THREE.PlaneGeometry(5, 2.3), M.wall); w4.rotation.y = -Math.PI / 2; w4.position.set(5, 1.15, 2.5); w4.receiveShadow = true; scene.add(w4);   // v26: perete din dreapta (x = 5 m), orientativ
   // mătură + făraș în spațiul liber de 102 mm dintre corpul soldat și peretele vest
   const wood = std(0xb08a5a, 0.7), brist = std(0xd8b44a, 0.9), headM = std(0x3a3b41, 0.6), pan = std(0x2f6f8f, 0.45), o2 = { cast: false };
-  cyl(baseG, 200, 190, 4952, 'y', 11, 1300, wood, o2);
-  box(baseG, 120, 280, 4925, 4980, 140, 200, headM, o2); box(baseG, 125, 275, 4930, 4975, 0, 140, brist, o2);
-  box(baseG, 330, 450, 4930, 4968, 0, 35, pan, o2); box(baseG, 330, 450, 4966, 4972, 0, 480, pan, o2);
-  cyl(baseG, 390, 480, 4969, 'y', 10, 650, wood, o2);
+  cyl(baseG, 200, 190, 4928, 'y', 11, 1300, wood, o2);   // v26: mătura mutată cu 24 mm spre soldat (țevile trec lângă perete)
+  box(baseG, 120, 280, 4901, 4956, 140, 200, headM, o2); box(baseG, 125, 275, 4906, 4951, 0, 140, brist, o2);
+  box(baseG, 330, 450, 4906, 4944, 0, 35, pan, o2); box(baseG, 330, 450, 4942, 4948, 0, 480, pan, o2);
+  cyl(baseG, 390, 480, 4945, 'y', 10, 650, wood, o2);
 }
 
 /* ---------- blat: decoruri procedurale tip Egger ---------- */
@@ -286,7 +287,7 @@ function setBlat(k) {
 /* ---------- corpuri (panouri din model.json) ---------- */
 const CENT_SIDE = frontMat(); CENT_SIDE.userData.zone = 'centrala'; CENT_SIDE.color.setHex(FRONT_COLORS[ZONES.centrala]);
 D.P.forEach(([m, x0, x1, z0, z1, y0, y1, s]) => {
-  const side = x0 === 0 && x1 === 450 && z0 === 982 && z1 === 1000 && y0 === 920;
+  const side = x0 === 0 && x1 === 450 && z0 === 982 && z1 === 1000 && y0 === 918;
   box(s ? upper : baseG, x0, x1, z0, z1, y0, y1, side ? CENT_SIDE : ((x1 <= 560 && z0 >= 578 && z1 <= 1018 && y0 >= 100) ? M.palC : (m ? M.pfl : M.pal)), { edge: !m });
 });
 D.W.forEach((b) => { const m = box(blatG, b[0], b[1], b[2], b[3], b[4], b[5], M.blat, { edge: true }); worldUV(m.geometry, b); });
@@ -300,8 +301,8 @@ box(baseG, 513, 2350, 510, 513, 5, 118, M.gold);
 box(baseG, 510, 513, 510, 3650, 5, 118, M.gold);
 box(baseG, 510, 513, 4300, 4900, 5, 118, M.gold);
 
-const J_POLY = [[536, 882], [536, 846], [536.9, 841], [539.5, 836.5], [543.5, 833.5], [548, 832], [560, 832], [560, 837], [558.5, 837], [558.5, 834], [548.5, 834], [544, 835.5], [541, 838.5], [539.2, 842], [538.5, 846], [538.5, 882]];
-const C_POLY = [[533.5, 524], [533.5, 451], [560, 451], [560, 456], [558.5, 456], [558.5, 452.5], [535, 452.5], [535, 522.5], [558.5, 522.5], [558.5, 519], [560, 519], [560, 524]];
+const J_POLY = [[560, 823], [558.5, 823], [558.5, 824.5], [539.4, 824.5], [539.4, 836.2], [534.3, 836.2], [534.3, 840.9], [535.8, 840.9], [535.8, 837.7], [539.4, 837.7], [539.4, 866.2], [535.8, 866.2], [535.8, 863.5], [534.3, 863.5], [534.3, 867.7], [539.4, 867.7], [539.4, 878.8], [537.2, 878.8], [537.2, 880], [540.9, 880], [540.9, 826], [560, 826]];
+const C_POLY = [[560, 449.5], [558.5, 449.5], [558.5, 451], [539.4, 451], [539.4, 469.25], [534.3, 469.25], [534.3, 473.95], [535.8, 473.95], [535.8, 470.75], [539.4, 470.75], [539.4, 499.25], [535.8, 499.25], [535.8, 496.05], [534.3, 496.05], [534.3, 500.75], [539.4, 500.75], [539.4, 517.2], [560, 517.2], [560, 520.5], [558.5, 520.5], [558.5, 518.7], [540.9, 518.7], [540.9, 452.5], [560, 452.5]];
 function profile(poly, along, start, len, mat, mitre) {
   const sh = new THREE.Shape();
   poly.forEach(([u, v], i) => (i ? sh.lineTo(u, v) : sh.moveTo(u, v)));
@@ -433,7 +434,7 @@ function buildJolly(s) {
 
 /* mașina de vase: corp gol + rafturi, front basculant */
 function buildDish(s) {
-  hollow(baseG, 1751, 2349, 5, 560, 120, 832, 15, M.white, '+z');
+  hollow(baseG, 1751, 2349, 5, 560, 120, 822, 15, M.white, '+z');
   box(baseG, 1751, 2349, 5, 510, 14, 120, M.white, { cast: false });
   rack(baseG, 1775, 2325, 40, 520, 230, M.wire, 9); rack(baseG, 1775, 2325, 40, 520, 520, M.wire, 9);
   cyl(baseG, 2050, 2, 280, 'y', 6, 60, M.chrome, { cast: false });
@@ -479,65 +480,67 @@ cyl(ovenG, 559, 1067, 3095, 'x', 15, 12, M.chrome); cyl(ovenG, 559, 1067, 3605, 
   const ang = rad(82);
   reg({ label: 'Ușă cuptor Whirlpool', dim: 'WOI5S8HM0SXA', grp: 'turn', apply: (e) => { piv.rotation.z = -ang * e; dirty = true; } }, [piv]);
 }
-ovenG.position.x = 18; ovenG.position.y = -8;
+ovenG.position.x = 18; ovenG.position.y = -26;   // v25: cuptorul coboara cu 8+18 mm
 
 // cuptor cu microunde (orientativ); v20: stă pe raftul coborât cu 8 mm
 const mwG = new THREE.Group(); baseG.add(mwG);
 box(mwG, 190, 530, 3125, 3575, 1118, 1378, M.dark); box(mwG, 530, 533, 3135, 3470, 1124, 1372, std(0x787a80, 0.5, 0.4));
 box(mwG, 533, 534, 3160, 3440, 1150, 1345, M.black, { cast: false }); box(mwG, 530, 533, 3480, 3565, 1124, 1372, std(0x55565c, 0.5, 0.4));
 cyl(mwG, 533, 1250, 3522, 'x', 22, 10, M.chrome); cyl(mwG, 540, 1160, 3475, 'y', 6, 180, M.chrome);
-mwG.position.y = -8;
+mwG.position.y = -26;   // v25: microundele coboara odata cu cuptorul
 
+const topG = new THREE.Group(); topG.position.y = -2; baseG.add(topG);   // v24: blatul e la 880-918, plita/chiuveta coboara cu 2 mm
 // plită cu gaz pe sticlă Whirlpool GOA 6425 NB1 — redesenată
 {
   const gl = std(0x07080b, 0.06, 0.35), o = { cast: false };
-  box(baseG, 33, 543, 1300, 1900, 920, 928, gl, o);
-  box(baseG, 33, 543, 1300, 1304, 927, 929, M.inox, o); box(baseG, 33, 543, 1896, 1900, 927, 929, M.inox, o);
-  box(baseG, 33, 37, 1300, 1900, 927, 929, M.inox, o); box(baseG, 539, 543, 1300, 1900, 927, 929, M.inox, o);
+  box(topG, 33, 543, 1300, 1900, 920, 928, gl, o);
+  box(topG, 33, 543, 1300, 1304, 927, 929, M.inox, o); box(topG, 33, 543, 1896, 1900, 927, 929, M.inox, o);
+  box(topG, 33, 37, 1300, 1900, 927, 929, M.inox, o); box(topG, 539, 543, 1300, 1900, 927, 929, M.inox, o);
   const ring = std(0x24252a, 0.45, 0.5), cap2 = std(0x0e0e10, 0.35, 0.4);
   [[160, 1450, 26], [160, 1750, 34], [380, 1450, 34], [380, 1750, 46]].forEach(([bx, bz, R]) => {
-    cyl(baseG, bx, 928, bz, 'y', R + 8, 1.5, M.inox, { seg: 32, cast: false });
-    cyl(baseG, bx, 929, bz, 'y', R, 5, ring, { seg: 32 });
-    cyl(baseG, bx, 934, bz, 'y', R * 0.78, 3, cap2, { seg: 32 });
-    cyl(baseG, bx, 937, bz, 'y', R * 0.5, 3, M.chrome, { seg: 28, cast: false });
-    cyl(baseG, bx, 940, bz, 'y', R * 0.2, 3, cap2, { seg: 16, cast: false });
+    cyl(topG, bx, 928, bz, 'y', R + 8, 1.5, M.inox, { seg: 32, cast: false });
+    cyl(topG, bx, 929, bz, 'y', R, 5, ring, { seg: 32 });
+    cyl(topG, bx, 934, bz, 'y', R * 0.78, 3, cap2, { seg: 32 });
+    cyl(topG, bx, 937, bz, 'y', R * 0.5, 3, M.chrome, { seg: 28, cast: false });
+    cyl(topG, bx, 940, bz, 'y', R * 0.2, 3, cap2, { seg: 16, cast: false });
     // grătar din fontă: cadru + cruce + picioare
     const h = 70, t = 9, gy = 941, gm = std(0x1b1b1e, 0.55, 0.5);
-    box(baseG, bx - h, bx + h, bz - h, bz - h + t, gy, gy + 10, gm); box(baseG, bx - h, bx + h, bz + h - t, bz + h, gy, gy + 10, gm);
-    box(baseG, bx - h, bx - h + t, bz - h, bz + h, gy, gy + 10, gm); box(baseG, bx + h - t, bx + h, bz - h, bz + h, gy, gy + 10, gm);
-    [1, -1].forEach((sg) => { const bar = box(baseG, bx - 95, bx + 95, bz - 4, bz + 4, gy + 1, gy + 9, gm); bar.position.set(bx, gy + 5, bz); bar.rotation.y = sg * Math.PI / 4; });
-    [[-h, -h], [-h, h - t], [h - t, -h], [h - t, h - t]].forEach(([dx, dz]) => box(baseG, bx + dx, bx + dx + t, bz + dz, bz + dz + t, 928, gy, gm, { cast: false }));
+    box(topG, bx - h, bx + h, bz - h, bz - h + t, gy, gy + 10, gm); box(topG, bx - h, bx + h, bz + h - t, bz + h, gy, gy + 10, gm);
+    box(topG, bx - h, bx - h + t, bz - h, bz + h, gy, gy + 10, gm); box(topG, bx + h - t, bx + h, bz - h, bz + h, gy, gy + 10, gm);
+    [1, -1].forEach((sg) => { const bar = box(topG, bx - 95, bx + 95, bz - 4, bz + 4, gy + 1, gy + 9, gm); bar.position.set(bx, gy + 5, bz); bar.rotation.y = sg * Math.PI / 4; });
+    [[-h, -h], [-h, h - t], [h - t, -h], [h - t, h - t]].forEach(([dx, dz]) => box(topG, bx + dx, bx + dx + t, bz + dz, bz + dz + t, 928, gy, gm, { cast: false }));
   });
   // butoanele sunt pe suprafața sticlei, în rând, lângă marginea din față (axă verticală)
   [1360, 1480, 1720, 1840].forEach((z) => {
-    cyl(baseG, 505, 928, z, 'y', 22, 1.5, M.inox, { seg: 28, cast: false });
-    cyl(baseG, 505, 929, z, 'y', 18, 20, cap2, { seg: 28 });
-    cyl(baseG, 505, 949, z, 'y', 14, 2, M.inox, { seg: 28, cast: false });
-    box(baseG, 509, 523, z - 1.5, z + 1.5, 950, 951.5, std(0xf4f4f1, 0.5), { cast: false });
+    cyl(topG, 505, 928, z, 'y', 22, 1.5, M.inox, { seg: 28, cast: false });
+    cyl(topG, 505, 929, z, 'y', 18, 20, cap2, { seg: 28 });
+    cyl(topG, 505, 949, z, 'y', 14, 2, M.inox, { seg: 28, cast: false });
+    box(topG, 509, 523, z - 1.5, z + 1.5, 950, 951.5, std(0xf4f4f1, 0.5), { cast: false });
   });
 }
 
 // chiuvetă + baterie + coșuri sub chiuvetă
 {
   const o = { cast: false };
-  box(baseG, 1160, 1740, 60, 140, 920, 925, M.sink, o); box(baseG, 1160, 1740, 530, 560, 920, 925, M.sink, o);
-  box(baseG, 1160, 1180, 140, 530, 920, 925, M.sink, o); box(baseG, 1720, 1740, 140, 530, 920, 925, M.sink, o);
-  box(baseG, 1180, 1720, 140, 530, 720, 722, M.sink, o);
-  box(baseG, 1180, 1182, 140, 530, 722, 920, M.sink, o); box(baseG, 1718, 1720, 140, 530, 722, 920, M.sink, o);
-  box(baseG, 1182, 1718, 140, 142, 722, 920, M.sink, o); box(baseG, 1182, 1718, 528, 530, 722, 920, M.sink, o);
-  cyl(baseG, 1450, 722, 335, 'y', 25, 2, M.dark, o);
-  cyl(baseG, 1450, 925, 100, 'y', 26, 20, M.chrome); cyl(baseG, 1450, 945, 100, 'y', 16, 235, M.chrome);
-  cyl(baseG, 1450, 1160, 100, 'z', 14, 190, M.chrome); box(baseG, 1475, 1520, 92, 108, 1000, 1012, M.chrome);
+  box(topG, 1160, 1740, 60, 140, 920, 925, M.sink, o); box(topG, 1160, 1740, 530, 560, 920, 925, M.sink, o);
+  box(topG, 1160, 1180, 140, 530, 920, 925, M.sink, o); box(topG, 1720, 1740, 140, 530, 920, 925, M.sink, o);
+  box(topG, 1180, 1720, 140, 530, 720, 722, M.sink, o);
+  box(topG, 1180, 1182, 140, 530, 722, 920, M.sink, o); box(topG, 1718, 1720, 140, 530, 722, 920, M.sink, o);
+  box(topG, 1182, 1718, 140, 142, 722, 920, M.sink, o); box(topG, 1182, 1718, 528, 530, 722, 920, M.sink, o);
+  cyl(topG, 1450, 722, 335, 'y', 25, 2, M.dark, o);
+  cyl(topG, 1450, 925, 100, 'y', 26, 20, M.chrome); cyl(topG, 1450, 945, 100, 'y', 16, 235, M.chrome);
+  cyl(topG, 1450, 1160, 100, 'z', 14, 190, M.chrome); box(baseG, 1475, 1520, 92, 108, 1000, 1012, M.chrome);
   box(baseG, 1200, 1440, 140, 400, 124, 470, M.bin, { cast: false }); box(baseG, 1470, 1710, 140, 400, 124, 470, M.bin, { cast: false });
   cyl(baseG, 1450, 560, 335, 'y', 22, 160, M.chrome, { cast: false });
 }
 
-// frigider Beko B5RCNA406HXBR
+// frigider Beko B5RCNA406HXBR (v26: mutat cu 30 mm în față, țevile PPR trec în spatele lui)
 {
-  hollow(baseG, 20, 675, 3678, 4273, 5, 2040, 25, M.white, '+x');
-  box(baseG, 25, 675, 3703, 4248, 700, 725, M.white, { cast: false });
-  [980, 1260, 1540, 1820].forEach((y) => box(baseG, 45, 650, 3703, 4248, y, y + 6, M.glass, { cast: false }));
-  const piv = new THREE.Group(); piv.position.set(684, 0, 3678); baseG.add(piv);
+  const frG = new THREE.Group(); frG.position.x = 30; baseG.add(frG);
+  hollow(frG, 20, 675, 3678, 4273, 5, 2040, 25, M.white, '+x');
+  box(frG, 25, 675, 3703, 4248, 700, 725, M.white, { cast: false });
+  [980, 1260, 1540, 1820].forEach((y) => box(frG, 45, 650, 3703, 4248, y, y + 6, M.glass, { cast: false }));
+  const piv = new THREE.Group(); piv.position.set(684, 0, 3678); frG.add(piv);
   box(piv, 683, 693, 3678, 4273, 705, 2040, M.fridge, { pick: true });
   box(piv, 675, 683, 3678, 4273, 705, 2040, M.white, { pick: true, cast: false });
   [800, 1120, 1440].forEach((y) => box(piv, 650, 675, 3700, 4250, y, y + 4, M.chrome, { pick: true, cast: false }));
@@ -545,7 +548,7 @@ mwG.position.y = -8;
   box(piv, 693, 703, 4230, 4240, 1040, 1050, M.chrome, { pick: true }); box(piv, 693, 703, 4230, 4240, 1640, 1650, M.chrome, { pick: true });
   const ang = rad(112);
   reg({ label: 'Ușă frigider', dim: 'Beko B5RCNA406HXBR', grp: 'turn', apply: (e) => { piv.rotation.y = ang * e; dirty = true; } }, [piv]);
-  const g = new THREE.Group(); baseG.add(g);
+  const g = new THREE.Group(); frG.add(g);
   box(g, 683, 693, 3678, 4273, 10, 700, M.fridge, { pick: true }); box(g, 675, 683, 3678, 4273, 10, 700, M.white, { pick: true, cast: false });
   cyl(g, 703, 260, 4235, 'y', 10, 350, M.chrome, { pick: true });
   box(g, 693, 703, 4230, 4240, 270, 280, M.chrome, { pick: true }); box(g, 693, 703, 4230, 4240, 590, 600, M.chrome, { pick: true });
@@ -554,6 +557,37 @@ mwG.position.y = -8;
   box(g, 260, 272, 3715, 4235, 45, 560, M.white, { pick: true, cast: false });
   reg({ label: 'Sertar congelator', dim: 'Beko B5RCNA406HXBR', grp: 'turn', apply: (e) => { g.position.x = 380 * e; dirty = true; } }, [g]);
 }
+
+
+/* ---------- v26: țevi PPR 20 mm izolate (tur + retur) + 2 calorifere de 150 cm + geamuri (orientativ) ---------- */
+const HT = new THREE.Group(); baseG.add(HT);
+{
+  const insT = std(0xc9503f, 0.75), insR = std(0x4a86c9, 0.75), radM = std(0xf3f2ee, 0.45, 0.1), frm = std(0xefede6, 0.55), o3 = { cast: false };
+  const SEGS = [["tur", [24, 60, 959], [24, 60, 4976]], ["tur", [24, 60, 4976], [24, 150, 4976]], ["tur", [24, 150, 4976], [4976, 150, 4976]], ["tur", [4976, 150, 4976], [4976, 150, 3220]], ["tur", [1780, 150, 4976], [1780, 150, 4905]], ["tur", [1780, 150, 4905], [1780, 200, 4905]], ["tur", [4976, 150, 3220], [4905, 150, 3220]], ["tur", [4905, 150, 3220], [4905, 200, 3220]], ["retur", [24, 20, 769], [24, 70, 769]], ["retur", [24, 20, 769], [24, 20, 4976]], ["retur", [24, 20, 4976], [100, 20, 4976]], ["retur", [100, 20, 4976], [100, 100, 4976]], ["retur", [100, 100, 4976], [4976, 100, 4976]], ["retur", [4976, 100, 4976], [4976, 100, 1780]], ["retur", [3220, 100, 4976], [3220, 100, 4905]], ["retur", [3220, 100, 4905], [3220, 200, 4905]], ["retur", [4976, 100, 1780], [4905, 100, 1780]], ["retur", [4905, 100, 1780], [4905, 200, 1780]]], RADS = [[1750, 3250, 4855, 4955, 200, 800], [4855, 4955, 1750, 3250, 200, 800]];
+  const R_INS = 19;
+  SEGS.forEach(([k, a, b]) => {
+    const ins = k === 'tur' ? insT : insR, ax = a[0] !== b[0] ? 'x' : (a[1] !== b[1] ? 'y' : 'z'), ix = { x: 0, y: 1, z: 2 }[ax];
+    const base = a.slice(); base[ix] = Math.min(a[ix], b[ix]);
+    cyl(HT, base[0], base[1], base[2], ax, R_INS, Math.abs(a[ix] - b[ix]), ins, { seg: 18, cast: false });
+    [a, b].forEach((q) => { const s = new THREE.Mesh(new THREE.SphereGeometry(R_INS, 14, 10), ins); s.position.set(q[0], q[1], q[2]); HT.add(s); });
+  });
+  RADS.forEach((r) => {
+    box(HT, r[0], r[1], r[2], r[3], r[4], r[5], radM, { edge: true });
+    const alongX = (r[1] - r[0]) > (r[3] - r[2]);
+    for (let k = 1; k < 25; k++) { const f = k / 25; if (alongX) box(HT, r[0] + (r[1] - r[0]) * f, r[0] + (r[1] - r[0]) * f + 3, r[2] - 2, r[3] + 2, r[4] + 25, r[5] - 25, radM, o3); else box(HT, r[0] - 2, r[1] + 2, r[2] + (r[3] - r[2]) * f, r[2] + (r[3] - r[2]) * f + 3, r[4] + 25, r[5] - 25, radM, o3); }
+  });
+  // geamuri 160 x 100 cm, la 100 cm de podea, calorifer centrat sub fiecare
+  const WG = new THREE.Group(); baseG.add(WG); WG.visible = false;   // geamurile (orientativ) sunt ascunse implicit
+  const win = (x0, x1, z0, z1) => {
+    const t = 60, h0 = 1000, h1 = 2000;
+    if (x1 - x0 > 200) { box(WG, x0, x1, z0, z1, h0, h0 + 50, frm, o3); box(WG, x0, x1, z0, z1, h1 - 50, h1, frm, o3); box(WG, x0, x0 + 50, z0, z1, h0 + 50, h1 - 50, frm, o3); box(WG, x1 - 50, x1, z0, z1, h0 + 50, h1 - 50, frm, o3); box(WG, (x0 + x1) / 2 - 25, (x0 + x1) / 2 + 25, z0, z1, h0 + 50, h1 - 50, frm, o3); box(WG, x0 + 50, x1 - 50, z0 + t / 2 - 2, z0 + t / 2 + 2, h0 + 50, h1 - 50, M.glass, o3); }
+    else { box(WG, x0, x1, z0, z1, h0, h0 + 50, frm, o3); box(WG, x0, x1, z0, z1, h1 - 50, h1, frm, o3); box(WG, x0, x1, z0, z0 + 50, h0 + 50, h1 - 50, frm, o3); box(WG, x0, x1, z1 - 50, z1, h0 + 50, h1 - 50, frm, o3); box(WG, x0, x1, (z0 + z1) / 2 - 25, (z0 + z1) / 2 + 25, h0 + 50, h1 - 50, frm, o3); box(WG, x0 + t / 2 - 2, x0 + t / 2 + 2, z0 + 50, z1 - 50, h0 + 50, h1 - 50, M.glass, o3); }
+  };
+  win(1700, 3300, 4940, 5000); win(4940, 5000, 1700, 3300);
+  HT.userData.WG = WG;
+}
+$('tHeat').addEventListener('change', (e) => { HT.visible = e.target.checked; dirty = true; });
+$('tWin').addEventListener('change', (e) => { HT.userData.WG.visible = e.target.checked; dirty = true; });
 
 // hotă Cata GT-Plus 45 (în corpul de sus)
 box(upper, 148, 430, 1354, 1846, 1593, 1870, M.hood); box(upper, 250, 440, 1400, 1800, 1571, 1575, M.black, { cast: false });
@@ -890,7 +924,7 @@ function splashBox(x0, x1, z0, z1, y0, y1) {
   const m = box(splashG, x0, x1, z0, z1, y0, y1, M.blat, { edge: false, cast: false }); worldUV(m.geometry, [x0, x1, z0, z1, y0, y1]);
   m.userData.splash = [x0, x1, z0, z1, y0, y1]; return m;
 }
-const SPL = [splashBox(450, 2380, 0, 8, 920, 1555), splashBox(0, 8, 1000, 3050, 920, 1555)];
+const SPL = [splashBox(450, 2380, 0, 8, 918, 1555), splashBox(0, 8, 1000, 3050, 918, 1555)];
 function setSplash(k) {
   SPL.forEach((m) => { m.material = k === 'tile' ? TILE : M.blat; m.visible = k !== 'none'; });
   dirty = true;
@@ -909,6 +943,7 @@ const VIEWS = {
   turnuri: { t: [0.3, 1.2, 3.1], th: Math.PI / 2, ph: 1.4, r: 6.0 },
   sus: { t: [1.3, 0.6, 2.0], th: Math.PI / 4, ph: 0.12, r: 8.2 },
   centrala: { t: [0.15, 0.8, 0.79], th: 1.25, ph: 1.4, r: 2.2 },
+  tevi: { t: [2.5, 0.0, 2.5], th: Math.PI / 4, ph: 0.3, r: 11.5 },
 };
 let tw = null;
 function goView(k) {
